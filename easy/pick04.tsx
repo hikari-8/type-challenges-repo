@@ -29,11 +29,13 @@
 
 /* _____________ ここにコードを記入 _____________ */
 
-// extends 型の条件付きチェック
-// マッピング型
 type MyPick<Todo, K extends keyof Todo> = {
 	[key in K]: Todo[key];
 };
+
+// extends ：extendsをつけられた型引数は、常にその型の部分型でなければならないという制約をつけれる
+// マッピング型
+// keyof :オブジェクトリテラルのkeyをリテラル型のユニオンにして返す
 
 /* _____________ テストケース _____________ */
 import type { Equal, Expect } from "@type-challenges/utils";
